@@ -9,7 +9,8 @@ class DrawTeamsPage extends StatefulWidget {
 }
 
 class _DrawTeamsPageState extends State<DrawTeamsPage> {
-  var future = TeamsController().generateTeams();
+  Future<List<Map<int, List<String>>>> future =
+      TeamsController().getTeamsWithPlayers();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

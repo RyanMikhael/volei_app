@@ -28,8 +28,7 @@ class TeamsController {
     }
 
     await PlayerController().insertPlayerOnTeam();
-    var map = await getTeamsWithPlayers();
-    var list = await transformAsList(map);
+    var list = await getTeamsWithPlayers();
     return list;
   }
 
@@ -39,7 +38,7 @@ class TeamsController {
     return list;
   }
 
-  Future<List<Map<String, Object?>>?> getTeamsWithPlayers() async {
+  Future<List<Map<int, List<String>>>> getTeamsWithPlayers() async {
     database = await SqliteDatabase().open();
 
     final result = await database.rawQuery('''
@@ -49,7 +48,9 @@ class TeamsController {
     LEFT JOIN Jogador j ON j.timesId = t.id
   ''');
 
-    return result;
+    final list = await transformAsList(result);
+
+    return list;
   }
 
   Future<List<Map<int, List<String>>>> transformAsList(
