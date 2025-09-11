@@ -11,7 +11,7 @@ class AddPlayerPage extends StatefulWidget {
 }
 
 class _AddPlayerPageState extends State<AddPlayerPage> {
-  int? selectedLevel;
+  int? selectedLevel = 1;
   String? selectedPosition;
 
   TextEditingController nameController = TextEditingController();
