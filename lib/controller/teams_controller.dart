@@ -1,6 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:volei_app/controller/player_controller.dart';
 import 'package:volei_app/database/db.dart';
+import 'package:volei_app/model/player.dart';
 
 class TeamsController {
   late Database database;
@@ -11,8 +12,7 @@ class TeamsController {
     if (result.isNotEmpty) {
       await SqliteDatabase().deleteTeams();
     }
-    List<Map<String, Object?>>? listPlayers =
-        await PlayerController().getAllPlayers();
+    List<Player> listPlayers = await PlayerController().getAllPlayers();
     int numberPlayers = listPlayers!.length;
     int numberTeams = numberPlayers ~/ 4;
     int rest = numberPlayers % 4;
