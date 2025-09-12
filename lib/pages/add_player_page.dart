@@ -36,7 +36,6 @@ class _AddPlayerPageState extends State<AddPlayerPage> {
           child: Column(
             children: [
               TextFormField(
-                style: TextStyle(color: Colors.blue),
                 controller: nameController,
                 decoration: const InputDecoration(
                   hintText: 'Nome do Jogador',

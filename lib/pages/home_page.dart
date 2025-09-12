@@ -28,11 +28,11 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.people_alt),
+            icon: Icon(Icons.person_add),
             label: 'Jogadores',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.double_arrow_rounded), label: 'Sortear times')
+              icon: Icon(Icons.groups), label: 'Sortear times')
         ],
         currentIndex: selectedIndex,
         onTap: onItemTapped,

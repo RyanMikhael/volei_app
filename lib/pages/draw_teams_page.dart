@@ -23,7 +23,6 @@ class _DrawTeamsPageState extends State<DrawTeamsPage> {
                     child: CircularProgressIndicator(),
                   );
                 } else if (snapshot.hasError) {
-                  print(snapshot.error);
                   return const Center(
                     child: Text('Falha ao carregar os dados!'),
                   );
@@ -40,13 +39,19 @@ class _DrawTeamsPageState extends State<DrawTeamsPage> {
                         final teamId = element.keys.first;
                         final players = element.values.first;
 
-                        return Container(
-                          margin: EdgeInsets.only(bottom: 25),
-                          color: Colors.blue,
-                          child: Center(
+                        return Card(
+                          margin: const EdgeInsets.all(8),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Time $teamId'),
+                                Text(
+                                  'Time $teamId',
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18),
+                                ),
                                 const SizedBox(
                                   height: 4,
                                 ),

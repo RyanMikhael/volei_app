@@ -45,14 +45,13 @@ class _ListPlayersPageState extends State<ListPlayersPage> {
                       direction: DismissDirection.endToStart,
                       onDismissed: (direction) async {
                         await PlayerController()
-                            .deletePlayer(players[index]['id']);
+                            .deletePlayer(players[index].id);
                       },
                       child: Card(
                         child: ListTile(
-                          title: Text('${players[index]['nome']}'),
-                          subtitle: Text('${players[index]['posicao']}'),
-                          trailing: Text(
-                              'Nivel ${players[index]['nivel_habilidade']}'),
+                          title: Text(players[index].name),
+                          subtitle: Text(players[index].position),
+                          trailing: Text('Nivel ${players[index].level}'),
                         ),
                       ),
                     );
