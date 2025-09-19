@@ -78,7 +78,7 @@ class PlayerController {
         }
       }
     } else {
-      for (var i = 0; i < numberTeams!.length; i++) {
+      for (var i = 0; i < numberTeams.length; i++) {
         for (var j = 0; j < 4; j++) {
           var drawnPlayer = players[random.nextInt(players!.length)];
           if (!drawnPlayers.contains(drawnPlayer)) {

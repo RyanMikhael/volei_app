@@ -68,13 +68,13 @@ class _DrawTeamsPageState extends State<DrawTeamsPage> {
                       });
                 }
               })),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           setState(() {
             future = TeamsController().generateTeams();
           });
         },
-        child: Text('Sortear times'),
+        label: Text('Sortear times'),
       ),
     );
   }

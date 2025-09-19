@@ -98,7 +98,10 @@ class _AddPlayerPageState extends State<AddPlayerPage> {
                   },
                   style: ElevatedButton.styleFrom(
                       elevation: 8,
-                      backgroundColor: Colors.blue,
+                      backgroundColor:
+                          Theme.of(context).brightness == Brightness.dark
+                              ? Colors.deepPurple
+                              : Colors.blue,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8))),
                   child: Padding(
